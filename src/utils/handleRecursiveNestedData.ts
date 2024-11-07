@@ -12,9 +12,9 @@ const handleRecursiveNestedData = (
   const res = [] as API.MenuItem[];
 
   for (const datum of data) {
-    if (datum.hideInMenu) {
-      continue;
-    }
+    // if (datum.hideInMenu) {
+    //   continue;
+    // }
 
     if (datum.children) {
       res.push({

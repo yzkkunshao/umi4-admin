@@ -74,7 +74,7 @@ const UserModel: UserModelType = {
         key: '1',
         path: '/',
         label: '首页',
-        redirect: '',
+        // redirect: '',
       },
     ],
     indexAllMenuItemById: {
@@ -83,7 +83,7 @@ const UserModel: UserModelType = {
         key: '1',
         path: '/',
         label: '首页',
-        redirect: '',
+        // redirect: '',
       },
     },
     indexAllMenuItemByPath: {
@@ -92,7 +92,7 @@ const UserModel: UserModelType = {
         key: '1',
         path: '/',
         label: '首页',
-        redirect: '',
+        // redirect: '',
       },
     },
     indexValidMenuItemByPath: {
@@ -101,7 +101,7 @@ const UserModel: UserModelType = {
         key: '1',
         path: '/',
         label: '首页',
-        redirect: '',
+        // redirect: '',
       },
     },
   },
@@ -140,7 +140,7 @@ const UserModel: UserModelType = {
     //获取用户信息和权限以及菜单
     *getUserInfoAuthorityMenu({ payload }, { call, put }) {
       const { type }: { type: ReqOrder } = payload;
-      
+
       let userInfoRes: API.UserInfoResponse = {
         data: {},
         code: 0,
@@ -231,7 +231,7 @@ const UserModel: UserModelType = {
     //重置登录状态
     *resetLoginStatus(_, { put }) {
       localStorage.removeItem('Authorization');
-      
+
       yield put({
         type: 'save',
         payload: {
@@ -239,7 +239,7 @@ const UserModel: UserModelType = {
           loginBtnLoading: false,
         },
       });
-      
+
       //当前页面不是登录页, 且没有redirect参数的时候再设置redirect参数
       //而且这个redirect参数要包含url pathname和查询字符串参数, 即pathname及其后面的所有字符
       if (window.location.pathname !== '/user/login') {

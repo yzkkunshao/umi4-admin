@@ -21,21 +21,23 @@ const handleRedirect = (
 
     if (isLoginPage) {
       const queryString = window.location.search;
-  
+
       if (queryString) {
         const matchedRes = queryString.match(/redirect=(.*)/);
-  
+
         if (matchedRes) {
           //还要考虑redirect参数是否有效
           const decodeRedirect = decodeURIComponent(matchedRes[1]);
           //有效: 跳转
           if (indexValidMenuItemByPath[decodeRedirect]) {
             routePath = decodeRedirect;
-          } else if (indexAllMenuItemByPath[decodeRedirect]) {
-            //无效
-            //有子路由: 跳子路由
-            routePath = indexAllMenuItemByPath[decodeRedirect].redirect;
-          } else {
+          }
+          // else if (indexAllMenuItemByPath[decodeRedirect]) {
+          //   //无效
+          //   //有子路由: 跳子路由
+          //   routePath = indexAllMenuItemByPath[decodeRedirect].redirect;
+          // }
+          else {
             //无子路由: 还是要跳, 此时就是交由umi处理404的情况了
             routePath = decodeRedirect;
           }
@@ -50,11 +52,13 @@ const handleRedirect = (
       //有效
       if (indexValidMenuItemByPath[pathname]) {
         routePath = `${pathname}${search}`;
-      } else if (indexAllMenuItemByPath[pathname]) {
-        //无效
-        //有子路由: 跳子路由
-        routePath = `${indexAllMenuItemByPath[pathname].redirect}${search}`;
-      } else {
+      }
+      // else if (indexAllMenuItemByPath[pathname]) {
+      //   //无效
+      //   //有子路由: 跳子路由
+      //   routePath = `${indexAllMenuItemByPath[pathname].redirect}${search}`;
+      // }
+       else {
         //无子路由: 也跳, 此时交由umi处理404的情况
         routePath = `${pathname}${search}`;
       }

@@ -19,7 +19,7 @@ const handleGetCurrentLocation = (
     key: currentMenuItem.key,
     path: currentMenuItem.path,
     label: currentMenuItem.label,
-    redirect: currentMenuItem.redirect,
+    // redirect: currentMenuItem.redirect,
   });
 
   if (currentMenuItem.pid) {

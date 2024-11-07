@@ -100,7 +100,7 @@ declare namespace API {
    * 菜单项
    * @description id 数据库中数据的id
    * @description pid 数据库中数据的id(父级的id)
-   * @description key 菜单项的唯一标志, 使用string类型代替React.Key: 
+   * @description key 菜单项的唯一标志, 使用string类型代替React.Key:
    * https://ant.design/components/menu-cn#itemtype, 不然会出现key类型不对导致的菜单项无法被选中的问题
    * @description lable 菜单的标题
    * @description hideInMenu 在菜单中隐藏
@@ -121,8 +121,8 @@ declare namespace API {
     pid?: number;
     key: string;
     path: string;
-    redirect: string;
-    hideInMenu?: boolean;
+    // redirect: string;
+    // hideInMenu?: boolean;
     label: React.ReactElement | string;
     children?: MenuItem[];
   }
